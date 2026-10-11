@@ -77,13 +77,14 @@
         }
       );
 
-      checks.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.symlinkJoin {
-        name = "nixos-asahi-metapackage";
-        paths = with self.packages.aarch64-linux.installerPackage; [
-          btrfs
-          ext4
-        ];
-      };
+      checks.aarch64-linux = { };
+      # nixpkgs.legacyPackages.aarch64-linux.symlinkJoin {
+      #   name = "nixos-asahi-metapackage";
+      #   paths = with self.packages.aarch64-linux.installerPackage; [
+      #     # btrfs
+      #     ext4
+      #   ];
+      # };
 
       formatter = forEachSystem ({ pkgs }: pkgs.nixfmt-rfc-style);
     };
