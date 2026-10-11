@@ -88,11 +88,11 @@
       formatter = forEachSystem ({ pkgs }: pkgs.nixfmt-rfc-style);
     };
 
-  nixConfig = {
-    download-buffer-size = "128M";
-    extra-substituters = [ "https://nixos-asahi.cachix.org" ];
-    extra-trusted-public-keys = [
-      "nixos-asahi.cachix.org-1:CPH9jazpT/isOQvFhtAZ0Z18XNhAp29+LLVHr0b2qVk="
-    ];
-  };
+  # nixConfig = {
+  #   download-buffer-size = "128M";
+  #   extra-substituters = [ "https://nixos-asahi.cachix.org" ];
+  #   extra-trusted-public-keys = [
+  #     "nixos-asahi.cachix.org-1:CPH9jazpT/isOQvFhtAZ0Z18XNhAp29+LLVHr0b2qVk="
+  #   ];
+  # };
 }
