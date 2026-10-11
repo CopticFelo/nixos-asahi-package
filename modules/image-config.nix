@@ -136,10 +136,7 @@
     })
   );
 
-  hardware.asahi = {
-    extractPeripheralFirmware = false; # Can't legally be included in the image.
-    useExperimentalGPUDriver = true;
-  };
+  hardware.asahi.extractPeripheralFirmware = false; # Can't legally be included in the image.
 
   zramSwap = {
     enable = true;
