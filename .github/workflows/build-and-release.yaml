@@ -16,14 +16,14 @@ jobs:
       - uses: actions/checkout@v4.2.2
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
-      # might wanna edit that one....
       - name: Build metapackage
         run: |
           nix profile install nixpkgs#nix-fast-build
           nix-fast-build \
             --eval-max-memory-size 4096 \
             --skip-cached \
-            --no-nom
+            --no-nom \
+            --out-link result-aarch64-linux
 
       - name: Release
         uses: softprops/action-gh-release@v2.2.2
