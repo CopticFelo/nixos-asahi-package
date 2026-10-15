@@ -17,11 +17,13 @@ jobs:
       - name: Build metapackage
         run: |
           nix profile install nixpkgs#nix-fast-build
-          nix-fast-build \
-            --eval-max-memory-size 4096 \
-            --skip-cached \
-            --no-nom \
-            --out-link ./result-aarch64-linux
+          nix build .#packages.aarch64-linux.installerPackage.ext4
+          # nix-fast-build \
+          #   --flake .#packages.aarch64-linux.installerPackage.ext4 \
+          #   --eval-max-memory-size 4096 \
+          #   --skip-cached \
+          #   --no-nom \
+          #   --out-link ./result-aarch64-linux
 
       - name: Verify Build Artifacts
         run: |
