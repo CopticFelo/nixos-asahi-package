@@ -25,12 +25,11 @@ jobs:
             --no-nom \
             --out-link result-aarch64-linux
 
-      - name: Release
-        uses: softprops/action-gh-release@v2.2.2
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Archive and upload nixos asahi images and installer data
+        uses: actions/upload-artifact@v4
         with:
-          draft: true
-          files: |
+          name: nixos-package-artificats
+          path: |
             result-aarch64-linux/installer_data-*.json
             result-aarch64-linux/nixos-asahi-*.zip
 
