@@ -21,7 +21,7 @@ jobs:
             --eval-max-memory-size 4096 \
             --skip-cached \
             --no-nom \
-            --out-link result-aarch64-linux
+            --out-link ./result-aarch64-linux
 
       - name: Verify Build Artifacts
         run: |
